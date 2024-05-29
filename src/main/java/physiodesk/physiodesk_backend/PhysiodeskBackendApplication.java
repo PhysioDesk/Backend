@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class PhysiodeskBackendApplication {
 
-	publicd static void main(String[] args) {
+	public static void main(String[] args) {
 		SpringApplication.run(PhysiodeskBackendApplication.class, args);
 	}
+
 
 }
