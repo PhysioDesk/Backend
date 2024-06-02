@@ -1,6 +1,6 @@
 package physiodesk.physiodesk_backend.products.domain.model.commands;
 
-public record CreateProductCommand(String name, String description, double price, String imageUrl){
+public record CreateProductCommand(long id, String name, String description, double price, String imageUrl){
 
     public CreateProductCommand{
         if(name == null || name.isBlank()){

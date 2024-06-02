@@ -5,14 +5,19 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import org.springframework.data.domain.AbstractAggregateRoot;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import physiodesk.physiodesk_backend.products.domain.model.commands.CreateProductCommand;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 public class Product extends AbstractAggregateRoot<Product> {
+    //abstract aggregate root is a class that is used to represent an aggregate root in the domain model
+    //un aggregate root is an entity that is used to represent a group of objects that are treated as a single unit
+
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
     private Long id;
 
     @Column(nullable = false)
@@ -40,6 +45,13 @@ public class Product extends AbstractAggregateRoot<Product> {
         this.description = description;
         this.price = price;
         this.imageUrl = imageUrl;
+    }
+
+    public Product(CreateProductCommand command){
+        this.name = command.name();
+        this.description = command.description();
+        this.price = command.price();
+        this.imageUrl = command.imageUrl();
     }
 
 }
