@@ -1,7 +1,7 @@
-package physiodesk.physiodesk_backend.products.interfaces.rest.transform;
+package physiodesk.physiodesk_backend.Products.interfaces.rest.transform;
 
-import physiodesk.physiodesk_backend.products.domain.model.commands.CreateProductCommand;
-import physiodesk.physiodesk_backend.products.interfaces.rest.resources.CreateProductResource;
+import physiodesk.physiodesk_backend.Products.domain.model.commands.CreateProductCommand;
+import physiodesk.physiodesk_backend.Products.interfaces.rest.resources.CreateProductResource;
 
 public class CreateProductCommandFromResourceAssembler {
     public static CreateProductCommand fromResource(CreateProductResource resource) {

@@ -1,16 +1,16 @@
-package physiodesk.physiodesk_backend.products.application.internal.queryservices;
+package physiodesk.physiodesk_backend.Products.application.internal.queryservices;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import physiodesk.physiodesk_backend.products.domain.model.aggregates.Product;
-import physiodesk.physiodesk_backend.products.domain.model.queries.GetAllQuery;
-import physiodesk.physiodesk_backend.products.domain.model.queries.GetProductById;
-import physiodesk.physiodesk_backend.products.domain.services.IProductCommandService;
-import physiodesk.physiodesk_backend.products.domain.services.IProductQueryService;
-import physiodesk.physiodesk_backend.products.interfaces.rest.resources.CreateProductResource;
-import physiodesk.physiodesk_backend.products.interfaces.rest.resources.ProductResource;
-import physiodesk.physiodesk_backend.products.interfaces.rest.transform.CreateProductCommandFromResourceAssembler;
-import physiodesk.physiodesk_backend.products.interfaces.rest.transform.ProductResourceFromEntityAssembler;
+import physiodesk.physiodesk_backend.Products.domain.model.aggregates.Product;
+import physiodesk.physiodesk_backend.Products.domain.model.queries.GetAllQuery;
+import physiodesk.physiodesk_backend.Products.domain.model.queries.GetProductById;
+import physiodesk.physiodesk_backend.Products.domain.services.IProductCommandService;
+import physiodesk.physiodesk_backend.Products.domain.services.IProductQueryService;
+import physiodesk.physiodesk_backend.Products.interfaces.rest.resources.CreateProductResource;
+import physiodesk.physiodesk_backend.Products.interfaces.rest.resources.ProductResource;
+import physiodesk.physiodesk_backend.Products.interfaces.rest.transform.CreateProductCommandFromResourceAssembler;
+import physiodesk.physiodesk_backend.Products.interfaces.rest.transform.ProductResourceFromEntityAssembler;
 
 import java.util.List;
 import java.util.Optional;

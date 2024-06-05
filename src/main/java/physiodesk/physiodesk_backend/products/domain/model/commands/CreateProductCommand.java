@@ -1,4 +1,4 @@
-package physiodesk.physiodesk_backend.products.domain.model.commands;
+package physiodesk.physiodesk_backend.Products.domain.model.commands;
 
 public record CreateProductCommand(long id, String name, String description, double price, String imageUrl){
 

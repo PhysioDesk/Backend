@@ -1,10 +1,10 @@
-package physiodesk.physiodesk_backend.products.application.internal.commandservices;
+package physiodesk.physiodesk_backend.Products.application.internal.commandservices;
 
 import org.springframework.stereotype.Service;
-import physiodesk.physiodesk_backend.products.domain.model.aggregates.Product;
-import physiodesk.physiodesk_backend.products.domain.model.commands.CreateProductCommand;
-import physiodesk.physiodesk_backend.products.domain.services.IProductCommandService;
-import physiodesk.physiodesk_backend.products.infrastructure.persistance.jpa.repositories.IProductRepository;
+import physiodesk.physiodesk_backend.Products.domain.model.aggregates.Product;
+import physiodesk.physiodesk_backend.Products.domain.model.commands.CreateProductCommand;
+import physiodesk.physiodesk_backend.Products.domain.services.IProductCommandService;
+import physiodesk.physiodesk_backend.Products.infrastructure.persistance.jpa.repositories.IProductRepository;
 
 import java.util.Optional;
 

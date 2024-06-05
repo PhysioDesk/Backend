@@ -1,7 +1,7 @@
-package physiodesk.physiodesk_backend.products.domain.services;
+package physiodesk.physiodesk_backend.Products.domain.services;
 
-import physiodesk.physiodesk_backend.products.domain.model.aggregates.Product;
-import physiodesk.physiodesk_backend.products.domain.model.commands.CreateProductCommand;
+import physiodesk.physiodesk_backend.Products.domain.model.aggregates.Product;
+import physiodesk.physiodesk_backend.Products.domain.model.commands.CreateProductCommand;
 
 import java.util.Optional;
 

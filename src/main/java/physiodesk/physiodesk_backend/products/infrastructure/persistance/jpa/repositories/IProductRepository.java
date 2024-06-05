@@ -1,9 +1,9 @@
-package physiodesk.physiodesk_backend.products.infrastructure.persistance.jpa.repositories;
+package physiodesk.physiodesk_backend.Products.infrastructure.persistance.jpa.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import physiodesk.physiodesk_backend.products.domain.model.aggregates.Product;
+import physiodesk.physiodesk_backend.Products.domain.model.aggregates.Product;
 
 import java.util.List;
 import java.util.Optional;

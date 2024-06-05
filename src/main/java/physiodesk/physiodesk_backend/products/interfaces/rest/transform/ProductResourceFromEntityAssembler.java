@@ -1,7 +1,7 @@
-package physiodesk.physiodesk_backend.products.interfaces.rest.transform;
+package physiodesk.physiodesk_backend.Products.interfaces.rest.transform;
 
-import physiodesk.physiodesk_backend.products.domain.model.aggregates.Product;
-import physiodesk.physiodesk_backend.products.interfaces.rest.resources.ProductResource;
+import physiodesk.physiodesk_backend.Products.domain.model.aggregates.Product;
+import physiodesk.physiodesk_backend.Products.interfaces.rest.resources.ProductResource;
 
 public class ProductResourceFromEntityAssembler {
     public static ProductResource fromEntity(Product entity) {

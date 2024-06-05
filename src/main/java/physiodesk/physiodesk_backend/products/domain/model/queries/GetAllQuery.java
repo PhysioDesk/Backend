@@ -1,4 +1,4 @@
-package physiodesk.physiodesk_backend.products.domain.model.queries;
+package physiodesk.physiodesk_backend.Products.domain.model.queries;
 
 public record GetAllQuery() {
 

@@ -1,8 +1,8 @@
-package physiodesk.physiodesk_backend.products.domain.services;
+package physiodesk.physiodesk_backend.Products.domain.services;
 
-import physiodesk.physiodesk_backend.products.domain.model.aggregates.Product;
-import physiodesk.physiodesk_backend.products.domain.model.queries.GetAllQuery;
-import physiodesk.physiodesk_backend.products.domain.model.queries.GetProductById;
+import physiodesk.physiodesk_backend.Products.domain.model.aggregates.Product;
+import physiodesk.physiodesk_backend.Products.domain.model.queries.GetAllQuery;
+import physiodesk.physiodesk_backend.Products.domain.model.queries.GetProductById;
 
 import java.util.List;
 import java.util.Optional;

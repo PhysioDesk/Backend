@@ -1,11 +1,11 @@
-package physiodesk.physiodesk_backend.products.domain.model.aggregates;
+package physiodesk.physiodesk_backend.Products.domain.model.aggregates;
 
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import org.springframework.data.domain.AbstractAggregateRoot;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import physiodesk.physiodesk_backend.products.domain.model.commands.CreateProductCommand;
+import physiodesk.physiodesk_backend.Products.domain.model.commands.CreateProductCommand;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
