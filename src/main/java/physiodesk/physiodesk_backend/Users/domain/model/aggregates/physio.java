@@ -18,23 +18,28 @@ public class physio extends AbstractAggregateRoot<physio> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
+    @Setter
     private Long id;
 
     @Column(nullable = false)
     @Getter
     @JsonProperty("fullName")
+    @Setter
     private String nombre;
 
     @Column(nullable = false)
     @Getter
+    @Setter
     private String imagen;
 
     @Column(nullable = false)
     @Getter
+    @Setter
     private String biografia;
 
     @Column(nullable = false)
     @Getter
+    @Setter
     private Short edad;
 
     @ElementCollection

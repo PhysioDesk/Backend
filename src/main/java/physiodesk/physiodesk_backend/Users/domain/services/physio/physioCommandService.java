@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface physioCommandService {
     Optional<physio> handle(CreatePhysioCommand command);
     boolean deletePhysioById(Long id);
+    Optional<physio> updatePhysioById(Long id, physio command);
 }

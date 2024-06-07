@@ -69,4 +69,11 @@ public class PhysioController {
         boolean deleted = physioCommandService.deletePhysioById(id);
         return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<physio> updatePhysioById(@PathVariable Long id, @RequestBody physio physioDetails) {
+        return physioCommandService.updatePhysioById(id, physioDetails)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }

@@ -55,4 +55,19 @@ public class physioCommandServiceImpl implements physioCommandService {
         PhysioRepository.deleteById(id);
         return true; // Eliminación exitosa
     }
+
+    @Override
+    public Optional<physio> updatePhysioById(Long id, physio updatedPhysio) {
+        Optional<physio> optionalPhysio = PhysioRepository.findById(id);
+        if (optionalPhysio.isPresent()) {
+            physio existingPhysio = optionalPhysio.get();
+            existingPhysio.setNombre(updatedPhysio.getNombre());
+            existingPhysio.setImagen(updatedPhysio.getImagen());
+            existingPhysio.setBiografia(updatedPhysio.getBiografia());
+            existingPhysio.setEdad(updatedPhysio.getEdad());
+            existingPhysio.setHorarios(updatedPhysio.getHorarios());
+            return Optional.of(PhysioRepository.save(existingPhysio));
+        }
+        return Optional.empty();
+    }
 }
