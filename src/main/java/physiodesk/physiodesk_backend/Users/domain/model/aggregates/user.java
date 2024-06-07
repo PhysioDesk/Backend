@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import org.springframework.data.domain.AbstractAggregateRoot;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import physiodesk.physiodesk_backend.Users.domain.model.commands.CreateUserCommand;
+import physiodesk.physiodesk_backend.Users.domain.model.commands.user.CreateUserCommand;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
