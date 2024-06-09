@@ -3,6 +3,7 @@ package physiodesk.physiodesk_backend.Appointments.application.internal.commands
 import org.springframework.stereotype.Service;
 import physiodesk.physiodesk_backend.Appointments.domain.model.aggregates.Appointment;
 import physiodesk.physiodesk_backend.Appointments.domain.model.commands.CreateAppointmentCommand;
+import physiodesk.physiodesk_backend.Appointments.domain.model.commands.UpdateAppointmentCommand;
 import physiodesk.physiodesk_backend.Appointments.domain.services.IAppointmentCommandService;
 import physiodesk.physiodesk_backend.Appointments.infrastructure.persistance.jpa.IAppointmentRepository;
 
@@ -25,5 +26,20 @@ public class AppointmentCommandServiceImpl implements IAppointmentCommandService
         var appointment = new Appointment(command);
         var savedAppointment = appointmentRepository.save(appointment);
         return Optional.of(savedAppointment);
+    }
+
+    @Override
+    public Optional<Appointment> handle(UpdateAppointmentCommand command) {
+        if (appointmentRepository.existsById(command.id()))
+            throw new IllegalArgumentException("Appointment with same details already exists");
+        var result = appointmentRepository.findById(command.id());
+        if (result.isEmpty()) throw new IllegalArgumentException("Appointment does not exist");
+        var appointmentToUpdate = result.get();
+        try {
+            var updatedAppointment = appointmentRepository.save(appointmentToUpdate.UpdateInformation(command.date(), command.time()));
+            return Optional.of(updatedAppointment);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Error while updating appointment: " + e.getMessage());
+        }
     }
 }

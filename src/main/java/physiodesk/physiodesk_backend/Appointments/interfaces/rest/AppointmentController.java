@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import physiodesk.physiodesk_backend.Appointments.domain.model.aggregates.Appointment;
 import physiodesk.physiodesk_backend.Appointments.domain.model.commands.CreateAppointmentCommand;
+import physiodesk.physiodesk_backend.Appointments.domain.model.commands.UpdateAppointmentCommand;
 import physiodesk.physiodesk_backend.Appointments.domain.model.queries.GetAllAppointmentsByPatientIdQuery;
 import physiodesk.physiodesk_backend.Appointments.domain.model.queries.GetAllAppointmentsByPhysiotherapistIdQuery;
 import physiodesk.physiodesk_backend.Appointments.domain.model.queries.GetAllByPhysiotherapistIdAndDateQuery;
@@ -73,4 +74,5 @@ public class AppointmentController {
         var appointmentsResources = appointments.stream().map(AppointmentResourceFromEntityAssembler::fromEntity).toList();
         return ResponseEntity.ok(appointmentsResources);
     }
+
 }

@@ -6,6 +6,7 @@ import lombok.Getter;
 import org.springframework.data.domain.AbstractAggregateRoot;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import physiodesk.physiodesk_backend.Appointments.domain.model.commands.CreateAppointmentCommand;
+import physiodesk.physiodesk_backend.Appointments.domain.model.commands.UpdateAppointmentCommand;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
@@ -42,5 +43,11 @@ public class Appointment extends AbstractAggregateRoot {
         this.date = command.date();
         this.time = command.time();
     }
+
+    public Appointment UpdateInformation(String date, String time) {
+        this.date = date;
+        this.time = time;
+        return this;
+    } //todo nomas verificar por que no se usa updateappointmentcommand
 }
 
