@@ -14,5 +14,5 @@ public interface RecordRepository extends JpaRepository<Records, Long>{
     @Query("SELECT r FROM Records r")
     List<Records> getAllRecords();
     @Query("SELECT r FROM Records r WHERE r.date = :fecha")
-    Optional<Records> getRecordByFecha(@Param("fecha") String fecha);
+    List<Records> getRecordByFecha(@Param("fecha") String fecha);
 }

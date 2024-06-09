@@ -25,7 +25,7 @@ public class RecordQueryServiceImpl implements RecordQueryService {
     }
 
     @Override
-    public Optional<Records> handle(GetRecordByFecha query){
+    public List<Records> handle(GetRecordByFecha query) {
         return recordRepository.getRecordByFecha(query.fecha());
     }
 

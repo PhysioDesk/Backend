@@ -11,6 +11,6 @@ import java.util.Optional;
 public interface RecordQueryService {
 
     List<Records> handle(GetAllRecordsQuery query);
-    Optional<Records> handle(GetRecordByFecha query);
+    List<Records> handle(GetRecordByFecha query);
     Optional<Records> handle(GetRecordById query);
 }

@@ -44,11 +44,16 @@ public class RecordController {
                 .orElseGet(() -> ResponseEntity.badRequest().build());
     }
 
-    @GetMapping("/{fecha}")
-    public ResponseEntity<RecordResource> getRecordByFecha(@PathVariable String fecha) {
-        Optional<Records> record = recordQueryService.handle(new GetRecordByFecha(fecha));
-        return record.map(source -> new ResponseEntity<>(RecordResourceFromEntityAssembler.fromEntity(source), CREATED))
-                .orElseGet(() -> ResponseEntity.badRequest().build());
+    @GetMapping("/fecha/{fecha}")
+    public ResponseEntity<List<RecordResource>> getRecordByFecha(@PathVariable String fecha) {
+        List<Records> records = recordQueryService.handle(new GetRecordByFecha(fecha));
+        if (records.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        var recordResources = records.stream()
+                .map(RecordResourceFromEntityAssembler::fromEntity)
+                .toList();
+        return ResponseEntity.ok(recordResources);
     }
 
     @GetMapping
@@ -62,5 +67,16 @@ public class RecordController {
                     .toList();
             return ResponseEntity.ok(recordResources);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteRecordById(@PathVariable Long id) {
+        boolean isDeleted = recordCommandService.deleteRecordById(id);
+        if (isDeleted) {
+            return ResponseEntity.noContent().build(); // 204 No Content
+        } else {
+            return ResponseEntity.notFound().build(); // 404 Not Found
+        }
+    }
+
 
 }
