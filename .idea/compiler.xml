@@ -9,11 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="physiodesk_backend" />
         <module name="platform" />
+        <module name="Backend" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Backend" options="-parameters" />
       <module name="physiodesk_backend" options="-parameters" />
       <module name="platform" options="-parameters" />
     </option>
