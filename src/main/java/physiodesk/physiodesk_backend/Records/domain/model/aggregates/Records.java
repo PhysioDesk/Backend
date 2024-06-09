@@ -9,7 +9,7 @@ import physiodesk.physiodesk_backend.Records.domain.model.commands.CreateRecordC
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-public class Record extends AbstractAggregateRoot<Record> {
+public class Records extends AbstractAggregateRoot<Records> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,9 +36,9 @@ public class Record extends AbstractAggregateRoot<Record> {
     @JsonProperty("access")
     private String access;
 
-    public Record(){}
+    public Records(){}
 
-    public Record(Long id, String date, String name, String duration, String access) {
+    public Records(Long id, String date, String name, String duration, String access) {
         this.id = id;
         this.date = date;
         this.name = name;
@@ -46,7 +46,7 @@ public class Record extends AbstractAggregateRoot<Record> {
         this.access = access;
     }
 
-    public Record(CreateRecordCommand command){
+    public Records(CreateRecordCommand command){
         this.date = command.date();
         this.name = command.name();
         this.duration = command.duration();
