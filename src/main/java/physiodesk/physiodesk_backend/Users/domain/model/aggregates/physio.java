@@ -43,7 +43,7 @@ public class physio extends AbstractAggregateRoot<physio> {
     private Short edad;
 
     @ElementCollection
-    @CollectionTable(name = "physio_horarios", joinColumns = @JoinColumn(name = "physio_id"))
+    @CollectionTable(name = "physio_horarios", joinColumns = @JoinColumn(name = "id"))
     @Column(name = "horario")
     @Setter
     @Getter
