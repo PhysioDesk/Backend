@@ -1,4 +1,4 @@
-package physiodesk.physiodesk_backend.Users.domain;
+package physiodesk.physiodesk_backend.iam.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

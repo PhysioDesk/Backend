@@ -1,4 +1,4 @@
-package physiodesk.physiodesk_backend.Users.aplication.internal.commandservices.user;
+package physiodesk.physiodesk_backend.iam.application.internal.commandservices;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

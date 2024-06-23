@@ -1,4 +1,4 @@
-package physiodesk.physiodesk_backend.Users.aplication.internal.queryservices.user;
+package physiodesk.physiodesk_backend.iam.application.internal.queryservices;
 
 import org.springframework.stereotype.Service;
 import physiodesk.physiodesk_backend.Users.domain.model.aggregates.user;

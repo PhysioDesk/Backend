@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import physiodesk.physiodesk_backend.Security.JwtTokenProvider;
-import physiodesk.physiodesk_backend.Users.domain.AuthResponse;
+import physiodesk.physiodesk_backend.iam.domain.model.AuthResponse;
 import physiodesk.physiodesk_backend.Users.domain.model.aggregates.user;
 import physiodesk.physiodesk_backend.Users.domain.model.queries.user.GetAllUsersQuery;
 import physiodesk.physiodesk_backend.Users.domain.model.queries.user.GetUserById;
