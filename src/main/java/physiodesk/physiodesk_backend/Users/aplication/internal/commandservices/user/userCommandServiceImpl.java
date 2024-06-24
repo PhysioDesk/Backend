@@ -58,12 +58,12 @@ public class userCommandServiceImpl implements userCommandService {
         Optional<user> optionalUser = UserRepository.findById(id);
         if (optionalUser.isPresent()) {
             user existingUser = optionalUser.get();
-            existingUser.setName(optionalUser.get().getName());
-            existingUser.setLastname(optionalUser.get().getLastname());
-            existingUser.setName(optionalUser.get().getName());
-            existingUser.setPhone(optionalUser.get().getPhone());
-            existingUser.setEmail(optionalUser.get().getAddress());
-            existingUser.setCity(optionalUser.get().getCity());
+            existingUser.setName(updatedUser.getName());
+            existingUser.setLastname(updatedUser.getLastname());
+            existingUser.setPhone(updatedUser.getPhone());
+            existingUser.setEmail(updatedUser.getEmail());
+            existingUser.setAddress(updatedUser.getAddress());
+            existingUser.setCity(updatedUser.getCity());
 
             return Optional.of(UserRepository.save(existingUser));
         }

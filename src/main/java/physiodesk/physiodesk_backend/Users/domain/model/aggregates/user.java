@@ -22,13 +22,11 @@ public class user extends AbstractAggregateRoot<user> {
     @Column(nullable = false)
     @Getter
     @Setter
-    @JsonProperty("firstName")
     private String name;
 
     @Column(nullable = false)
     @Getter
     @Setter
-    @JsonProperty("lastName")
     private String lastname;
 
     @Column(nullable = false)
