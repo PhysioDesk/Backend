@@ -25,9 +25,6 @@ public class userCommandServiceImpl implements userCommandService {
 
     @Override
     public Optional<user> handle(CreateUserCommand command) {
-        if (UserRepository.existsById(command.id())) {
-            throw new IllegalArgumentException("user already exists");
-        }
         var user = new user(command);
         var createduser = UserRepository.save(user);
 

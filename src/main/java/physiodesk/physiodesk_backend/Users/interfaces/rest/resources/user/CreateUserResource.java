@@ -1,10 +1,7 @@
 package physiodesk.physiodesk_backend.Users.interfaces.rest.resources.user;
 
-public record CreateUserResource(long id,String name, String lastname,Long phone,String email, String address, String city) {
+public record CreateUserResource(String name, String lastname,Long phone,String email, String address, String city) {
     public CreateUserResource {
-        if (id < 0) {
-            throw new IllegalArgumentException("Id must be greater than or equal to 0");
-        }
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Name cannot be null or empty");
         }

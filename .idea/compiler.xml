@@ -9,7 +9,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="physiodesk" />
         <module name="physiodesk_backend" />
-        <module name="Backend" />
         <module name="platform" />
       </profile>
     </annotationProcessing>

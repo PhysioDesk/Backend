@@ -5,6 +5,6 @@ import physiodesk.physiodesk_backend.Users.interfaces.rest.resources.user.Create
 
 public class CreateUserCommandFromResourceAssembler {
     public static CreateUserCommand fromResource(CreateUserResource resource) {
-        return new CreateUserCommand(resource.id(), resource.name(), resource.lastname(), resource.phone(), resource.email(), resource.address(), resource.city());
+        return new CreateUserCommand(resource.name(), resource.lastname(), resource.phone(), resource.email(), resource.address(), resource.city());
     }
 }

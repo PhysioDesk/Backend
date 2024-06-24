@@ -1,6 +1,6 @@
 package physiodesk.physiodesk_backend.Users.domain.model.commands.user;
 
-public record CreateUserCommand(long id, String name, String lastname,Long phone,String email, String address, String city) {
+public record CreateUserCommand(String name, String lastname,Long phone,String email, String address, String city) {
 
     public CreateUserCommand {
         if (name == null || name.isBlank()) {

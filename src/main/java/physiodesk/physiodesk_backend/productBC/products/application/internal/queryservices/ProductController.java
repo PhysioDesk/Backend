@@ -17,6 +17,7 @@ import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/products")
 public class ProductController {
@@ -45,6 +46,7 @@ public class ProductController {
 
     }
 
+    @GetMapping
     public ResponseEntity<List<ProductResource>> getAllProducts() {
         var products = productQueryService.handle(new GetAllQuery());
         if(products.isEmpty()){
