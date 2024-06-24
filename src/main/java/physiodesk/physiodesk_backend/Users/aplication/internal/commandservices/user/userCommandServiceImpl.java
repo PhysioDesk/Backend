@@ -4,6 +4,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.stereotype.Service;
+import physiodesk.physiodesk_backend.Users.domain.model.aggregates.physio;
 import physiodesk.physiodesk_backend.Users.domain.model.aggregates.user;
 import physiodesk.physiodesk_backend.Users.domain.model.commands.user.CreateUserCommand;
 import physiodesk.physiodesk_backend.Users.domain.services.user.userCommandService;
@@ -50,5 +51,22 @@ public class userCommandServiceImpl implements userCommandService {
         }
         UserRepository.deleteById(id);
         return true; // Eliminación exitosa
+    }
+
+    @Override
+    public Optional<user> updateUserById(Long id, user updatedUser) {
+        Optional<user> optionalUser = UserRepository.findById(id);
+        if (optionalUser.isPresent()) {
+            user existingUser = optionalUser.get();
+            existingUser.setName(optionalUser.get().getName());
+            existingUser.setLastname(optionalUser.get().getLastname());
+            existingUser.setName(optionalUser.get().getName());
+            existingUser.setPhone(optionalUser.get().getPhone());
+            existingUser.setEmail(optionalUser.get().getAddress());
+            existingUser.setCity(optionalUser.get().getCity());
+
+            return Optional.of(UserRepository.save(existingUser));
+        }
+        return Optional.empty();
     }
 }

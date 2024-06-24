@@ -79,4 +79,11 @@ public class UserController {
         return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<user> updateUserById(@PathVariable Long id, @RequestBody user userDetails) {
+        return userCommandService.updateUserById(id, userDetails)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
 }
