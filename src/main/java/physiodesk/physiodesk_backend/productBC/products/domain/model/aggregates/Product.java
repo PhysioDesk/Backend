@@ -36,15 +36,24 @@ public class Product extends AbstractAggregateRoot<Product> {
     @Getter
     private String imageUrl;
 
+    @Column(nullable = false)
+    @Getter
+    private String rating;
+
+    @Getter
+    private String dimensiones;
+
     protected Product() {
     }
 
-    public Product(Long id, String name, String description, double price, String imageUrl) {
+    public Product(Long id, String name, String description, double price, String imageUrl, String rating, String dimensiones) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.imageUrl = imageUrl;
+        this.rating = rating;
+        this.dimensiones = dimensiones;
     }
 
     public Product(CreateProductCommand command){
@@ -52,6 +61,9 @@ public class Product extends AbstractAggregateRoot<Product> {
         this.description = command.description();
         this.price = command.price();
         this.imageUrl = command.imageUrl();
+        this.rating = command.rating();
+        this.dimensiones = command.dimensiones();
+
     }
 
 }

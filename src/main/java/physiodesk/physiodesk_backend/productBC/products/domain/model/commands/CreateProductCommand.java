@@ -1,6 +1,6 @@
 package physiodesk.physiodesk_backend.productBC.products.domain.model.commands;
 
-public record CreateProductCommand(long id, String name, String description, double price, String imageUrl){
+public record CreateProductCommand(long id, String name, String description, double price, String imageUrl,String rating, String dimensiones){
 
     public CreateProductCommand{
         if(name == null || name.isBlank()){
@@ -14,6 +14,12 @@ public record CreateProductCommand(long id, String name, String description, dou
         }
         if(imageUrl == null || imageUrl.isBlank()){
             throw new IllegalArgumentException("Image URL cannot be null or empty");
+        }
+        if(rating == null || rating.isBlank()){
+            throw new IllegalArgumentException("Rating cannot be null or empty");
+        }
+        if(dimensiones == null || dimensiones.isBlank()){
+            throw new IllegalArgumentException("Dimensiones cannot be null or empty");
         }
     }
 
