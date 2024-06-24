@@ -5,6 +5,6 @@ import physiodesk.physiodesk_backend.Users.interfaces.rest.resources.physio.Crea
 
 public class CreatePhysioCommandFromResourceAssembler {
     public static CreatePhysioCommand fromResource(CreatePhysioResource resource) {
-        return new CreatePhysioCommand(resource.id(), resource.nombre(), resource.imagen(), resource.biografia(), resource.edad(), resource.horarios());
+        return new CreatePhysioCommand(resource.id(), resource.nombre(), resource.imagen(), resource.biografia(), resource.edad(), resource.horario());
     }
 }

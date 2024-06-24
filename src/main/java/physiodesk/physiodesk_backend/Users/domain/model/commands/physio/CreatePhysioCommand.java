@@ -1,9 +1,12 @@
 package physiodesk.physiodesk_backend.Users.domain.model.commands.physio;
 
+import physiodesk.physiodesk_backend.Users.domain.model.entities.horarios;
+
 import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 
-public record CreatePhysioCommand(long id, String nombre, String imagen, String biografia, Short edad, List<LocalTime> horarios) {
+public record CreatePhysioCommand(long id, String nombre, String imagen, String biografia, Short edad, List<horarios> horario) {
 
     public CreatePhysioCommand{
         if (nombre == null || nombre.isBlank()) {
@@ -18,13 +21,8 @@ public record CreatePhysioCommand(long id, String nombre, String imagen, String 
         if (edad < 0) {
             throw new IllegalArgumentException("Edad must be greater than 0");
         }
-        if (horarios == null || horarios.isEmpty()) {
+        if (horario == null || horario.isEmpty()) {
             throw new IllegalArgumentException("Horarios cannot be null");
-        }
-        for (LocalTime horario : horarios) {
-            if (horario == null) {
-                throw new IllegalArgumentException("Horario times cannot be null");
-            }
         }
     }
 }

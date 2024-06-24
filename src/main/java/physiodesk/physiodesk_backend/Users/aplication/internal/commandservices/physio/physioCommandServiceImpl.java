@@ -65,7 +65,7 @@ public class physioCommandServiceImpl implements physioCommandService {
             existingPhysio.setImagen(updatedPhysio.getImagen());
             existingPhysio.setBiografia(updatedPhysio.getBiografia());
             existingPhysio.setEdad(updatedPhysio.getEdad());
-            existingPhysio.setHorarios(updatedPhysio.getHorarios());
+            existingPhysio.setHorario(updatedPhysio.getHorario());
             return Optional.of(PhysioRepository.save(existingPhysio));
         }
         return Optional.empty();
