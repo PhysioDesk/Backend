@@ -68,9 +68,10 @@ public class user extends AbstractAggregateRoot<user> {
         this.name = command.name();
         this.lastname = command.lastname();
         this.phone = command.phone();
+        this.email = command.email();
+
         this.address = command.address();
         this.city = command.city();
-        this.email = command.email();
     }
 
     public void setId(Long id) {
