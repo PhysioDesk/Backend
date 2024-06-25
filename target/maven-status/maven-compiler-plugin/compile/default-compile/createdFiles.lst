@@ -48,6 +48,7 @@ physiodesk\physiodesk_backend\productBC\appointments\domain\model\commands\Creat
 physiodesk\physiodesk_backend\productBC\products\infrastructure\persistance\jpa\repositories\IProductRepository.class
 physiodesk\physiodesk_backend\productBC\products\domain\model\aggregates\Product.class
 physiodesk\physiodesk_backend\productBC\appointments\infrastructure\persistance\jpa\repositories\IAppointmentRepository.class
+physiodesk\physiodesk_backend\Users\domain\model\queries\user\GetUserByEmailAndPassword.class
 physiodesk\physiodesk_backend\productBC\Records\domain\services\RecordQueryService.class
 physiodesk\physiodesk_backend\productBC\appointments\domain\model\queries\GetAllByPhysiotherapistIdAndDateQuery.class
 OpenApiConfiguration.class
@@ -57,8 +58,10 @@ physiodesk\physiodesk_backend\productBC\appointments\domain\services\IAppointmen
 physiodesk\physiodesk_backend\productBC\Records\interfaces\rest\transform\CreateRecordCommandFromResourceAssembler.class
 physiodesk\physiodesk_backend\productBC\appointments\domain\model\aggregates\Appointment.class
 physiodesk\physiodesk_backend\productBC\products\interfaces\rest\resources\CreateProductResource.class
+physiodesk\physiodesk_backend\Users\domain\model\entities\horarios.class
 physiodesk\physiodesk_backend\Users\domain\services\user\userQueryService.class
 physiodesk\physiodesk_backend\productBC\products\interfaces\rest\transform\ProductResourceFromEntityAssembler.class
+physiodesk\physiodesk_backend\Users\domain\model\queries\user\GetUserByPassword.class
 physiodesk\physiodesk_backend\productBC\appointments\domain\model\commands\UpdateAppointmentCommand.class
 physiodesk\physiodesk_backend\productBC\Records\aplication\internal\commandservices\recordCommandServiceImpl.class
 physiodesk\physiodesk_backend\productBC\appointments\domain\model\queries\GetAppointmentByIdQuery.class
@@ -82,3 +85,4 @@ physiodesk\physiodesk_backend\Users\aplication\internal\commandservices\user\use
 physiodesk\physiodesk_backend\Users\interfaces\rest\transform\physio\CreatePhysioCommandFromResourceAssembler.class
 physiodesk\physiodesk_backend\Users\domain\model\commands\physio\CreatePhysioCommand.class
 physiodesk\physiodesk_backend\Users\domain\services\physio\physioQueryService.class
+physiodesk\physiodesk_backend\Users\domain\model\queries\user\GetUserByEmail.class
