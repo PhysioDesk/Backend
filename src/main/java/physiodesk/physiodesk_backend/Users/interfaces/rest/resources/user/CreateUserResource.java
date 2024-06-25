@@ -1,6 +1,6 @@
 package physiodesk.physiodesk_backend.Users.interfaces.rest.resources.user;
 
-public record CreateUserResource(String name, String lastname,Long phone,String email, String address, String city) {
+public record CreateUserResource(String name, String lastname,Long phone,String email, String address, String city, String password) {
     public CreateUserResource {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Name cannot be null or empty");
@@ -16,6 +16,9 @@ public record CreateUserResource(String name, String lastname,Long phone,String 
         }
         if (city == null || city.isBlank()) {
             throw new IllegalArgumentException("City cannot be null or empty");
+        }
+        if (password == null || password.isBlank()) {
+            throw new IllegalArgumentException("Password cannot be null or empty");
         }
     }
 }

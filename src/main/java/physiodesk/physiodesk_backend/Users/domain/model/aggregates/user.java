@@ -49,10 +49,15 @@ public class user extends AbstractAggregateRoot<user> {
     @Setter
     private String city;
 
+    @Column(nullable = false)
+    @Getter
+    @Setter
+    private String password;
+
     public user() {
     }
 
-    public user(Long id, String name, String lastname, Long phone,String email, String address, String city) {
+    public user(Long id, String name, String lastname, Long phone,String email, String address, String city, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -60,6 +65,7 @@ public class user extends AbstractAggregateRoot<user> {
         this.phone = phone;
         this.address = address;
         this.city = city;
+        this.password = password;
     }
 
     public user(CreateUserCommand command){
@@ -70,6 +76,7 @@ public class user extends AbstractAggregateRoot<user> {
 
         this.address = command.address();
         this.city = command.city();
+        this.password = command.password();
     }
 
     public void setId(Long id) {

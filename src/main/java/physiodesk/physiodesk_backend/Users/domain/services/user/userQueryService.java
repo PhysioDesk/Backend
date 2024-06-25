@@ -11,4 +11,7 @@ public interface userQueryService {
 
     List<user> handle(GetAllUsersQuery query);
     Optional<user> handle(GetUserById query);
+    Optional<user> getUserByEmail(String email);
+    Optional<user> getUserByPassword(String password);
+    Optional<user> getUserByEmailAndPassword(String email, String password);
 }

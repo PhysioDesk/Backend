@@ -86,4 +86,25 @@ public class UserController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/email/{email}")
+    public ResponseEntity<user> getUserByEmail(@PathVariable String email) {
+        Optional<user> user = userQueryService.getUserByEmail(email);
+        return user.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/password/{password}")
+    public ResponseEntity<user> getUserByPassword(@PathVariable String password) {
+        Optional<user> user = userQueryService.getUserByPassword(password);
+        return user.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/email/{email}/password/{password}")
+    public ResponseEntity<user> getUserByEmailAndPassword(@PathVariable String email, @PathVariable String password) {
+        Optional<user> user = userQueryService.getUserByEmailAndPassword(email, password);
+        return user.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
 }

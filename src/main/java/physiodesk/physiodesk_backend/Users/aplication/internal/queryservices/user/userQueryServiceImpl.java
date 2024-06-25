@@ -26,4 +26,20 @@ public class userQueryServiceImpl implements userQueryService {
     public Optional<user> handle(GetUserById query){
         return userRepository.findById(query.id());
 }
+
+    @Override
+    public Optional<user> getUserByEmail(String email){
+        return userRepository.GetUserByEmail(email);
     }
+
+    @Override
+    public Optional<user> getUserByPassword(String password){
+        return userRepository.GetUserByPassword(password);
+    }
+
+    @Override
+    public Optional<user> getUserByEmailAndPassword(String email, String password){
+        return userRepository.GetUserByEmailAndPassword(email, password);
+    }
+
+}

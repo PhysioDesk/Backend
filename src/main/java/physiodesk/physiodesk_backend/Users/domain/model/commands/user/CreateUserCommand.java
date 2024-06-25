@@ -1,6 +1,6 @@
 package physiodesk.physiodesk_backend.Users.domain.model.commands.user;
 
-public record CreateUserCommand(String name, String lastname,Long phone,String email, String address, String city) {
+public record CreateUserCommand(String name, String lastname,Long phone,String email, String address, String city, String password) {
 
     public CreateUserCommand {
         if (name == null || name.isBlank()) {
@@ -20,6 +20,9 @@ public record CreateUserCommand(String name, String lastname,Long phone,String e
         }
         if (city == null || city.isBlank()) {
             throw new IllegalArgumentException("City cannot be null or empty");
+        }
+        if (password == null || password.isBlank()) {
+            throw new IllegalArgumentException("Password cannot be null or empty");
         }
     }
 }
